@@ -25,13 +25,11 @@ class SynologyNAS extends IPSModule {
 		
 		// Module anlegen
 		$archiv = IPS_GetInstanceIDByName("Archiv", 0 );
-		$self = $_IPS['SELF'];
-		$disk1ID = IPS_CreateInstance("{485D0419-BE97-4548-AA9C-C083EB82E61E}");
-		IPS_SetName($disk1ID, "Disk 1");
-		IPS_SetParent($disk1ID, $self);
-		
-		// Variablen aktualisieren
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Model", "Model", "", 10), true);
+				
+		// Variablen anlegen / aktualisieren
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Model", "Disk 1 - Model", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Model", "Disk 1 - Status", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Model", "Disk 1 - Temperatur", "", 10), true);
 		
 		$this->Update();
 		//Instanz ist aktiv
