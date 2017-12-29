@@ -49,7 +49,7 @@ class SynologyNAS extends IPSModule {
 	
 	//
 	private function getSnmpData($oid) {
-		return exec("c:\ip-symcon\snmpget.exe -c:home -v:2c -q -r:192.168.251.51 -o:".$oid);
+		return exec("c:\ip-symcon\snmpget.exe -c:home -t:2 -v:2c -q -r:192.168.251.51 -o:".$oid);
 	}
 	// Aktualisierung der Variablen
 	public function Update() {
