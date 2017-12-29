@@ -38,6 +38,14 @@ class SynologyNAS extends IPSModule {
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("SystemVersion", "System - Version", "", 80), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemUpgradeAvailable", "System - Upgrade Available", "", 90), true);
 	
+
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPUUser", "CPU - User", "Integer.Prozent", 110), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPUSystem", "CPU - System", "Integer.Prozent", 120), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPUIdle", "CPU - Idle", "Integer.Prozent", 130), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPULoadOneMinute", "CPU - Load 1 Minute", "Integer.Prozent", 140), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPULoadFiveMinute", "CPU - Load 5 Minute", "Integer.Prozent", 150), true);
+		
+		
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk1Model", "Disk 1 - Model", "", 1110), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Status", "Disk 1 - Status", "", 1120), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Temperature", "Disk 1 - Temperatur", "Temperatur", 1130), true);
@@ -81,6 +89,7 @@ class SynologyNAS extends IPSModule {
 	}
 	// Aktualisierung der Variablen
 	public function Update() {
+		// Systemdaten
 		$SynologyData['System']['systemStatus'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.1.0");
 		$SynologyData['System']['temperature'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.2.0");
 		$SynologyData['System']['powerStatus'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.3.0");
@@ -101,6 +110,19 @@ class SynologyNAS extends IPSModule {
 		SetValue($this->GetIDforIdent("SystemVersion"), $SynologyData['System']['version']);
 		SetValue($this->GetIDforIdent("SystemUpgradeAvailable"), $SynologyData['System']['upgradeAvailable']);
 	
+		// CPU Daten holen
+		$SynologyData['CPU']['User'] = $this->getSnmpData("1.3.6.1.4.1.2021.11.9.0");
+		$SynologyData['CPU']['System'] = $this->getSnmpData("1.3.6.1.4.1.2021.11.10.0");
+		$SynologyData['CPU']['Idle'] = $this->getSnmpData("1.3.6.1.4.1.2021.11.11.0");
+		$SynologyData['CPU']['loadOneMinute'] = $this->getSnmpData("1.3.6.1.4.1.2021.10.1.5.1");
+		$SynologyData['CPU']['loadFiveMinute'] = $this->getSnmpData("1.3.6.1.4.1.2021.10.1.5.2");
+
+		SetValue($this->GetIDforIdent("CPUUser"), $SynologyData['CPU']['User']);
+		SetValue($this->GetIDforIdent("CPUSystem"), $SynologyData['CPU']['System']);
+		SetValue($this->GetIDforIdent("CPUIdle"), $SynologyData['CPU']['Idle']);
+		SetValue($this->GetIDforIdent("CPULoadOneMinute"), $SynologyData['CPU']['loadOneMinute']);
+		SetValue($this->GetIDforIdent("CPULoadFiveMinute"), $SynologyData['CPU']['loadFiveMinute']);
+
 		// DiskIDs holen, da diese nicht 1:1 mit den AbfrageIDs übereinstimmen
 		$id0 = $this->getSnmpData("1.3.6.1.4.1.6574.2.1.1.2.0");
 		$id1 = $this->getSnmpData("1.3.6.1.4.1.6574.2.1.1.2.1");
