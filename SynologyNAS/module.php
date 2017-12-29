@@ -53,15 +53,15 @@ class SynologyNAS extends IPSModule {
 	}
 	// Aktualisierung der Variablen
 	public function Update() {
-		$SynologyData['System']['systemStatus'] = getSnmpData("1.3.6.1.4.1.6574.1.1.0");
-		$SynologyData['System']['temperature'] = getSnmpData("1.3.6.1.4.1.6574.1.2.0");
-		$SynologyData['System']['powerStatus'] = getSnmpData("1.3.6.1.4.1.6574.1.3.0");
-		$SynologyData['System']['systemFanStatus'] = getSnmpData("1.3.6.1.4.1.6574.1.4.1.0");
-		$SynologyData['System']['cpuFanStatus'] = getSnmpData("1.3.6.1.4.1.6574.1.4.2.0");
-		$SynologyData['System']['modelName'] = getSnmpData("1.3.6.1.4.1.6574.1.5.1.0");
-		$SynologyData['System']['serialNumber'] = getSnmpData("1.3.6.1.4.1.6574.1.5.2.0");
-		$SynologyData['System']['version'] = getSnmpData("1.3.6.1.4.1.6574.1.5.3.0");
-		$SynologyData['System']['upgradeAvailable'] = getSnmpData("1.3.6.1.4.1.6574.1.5.4.0");
+		$SynologyData['System']['systemStatus'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.1.0");
+		$SynologyData['System']['temperature'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.2.0");
+		$SynologyData['System']['powerStatus'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.3.0");
+		$SynologyData['System']['systemFanStatus'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.4.1.0");
+		$SynologyData['System']['cpuFanStatus'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.4.2.0");
+		$SynologyData['System']['modelName'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.5.1.0");
+		$SynologyData['System']['serialNumber'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.5.2.0");
+		$SynologyData['System']['version'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.5.3.0");
+		$SynologyData['System']['upgradeAvailable'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.5.4.0");
 		
 		SetValue($this->GetIDforIdent("SystemStatus"), $SynologyData['System']['systemStatus']);
 		SetValue($this->GetIDforIdent("SystemTemperature"), $SynologyData['System']['temperature']);
