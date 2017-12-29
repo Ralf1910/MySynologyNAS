@@ -125,13 +125,13 @@ class SynologyNAS extends IPSModule {
 		if (array_key_exists('Disk 1', $SynologyData)) {
 			SetValue($this->GetIDforIdent("Disk1Model"), $SynologyData['Disk 1']['diskModel']);
 			SetValue($this->GetIDforIdent("Disk1Status"), $SynologyData['Disk 1']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk1TemperatureModel"), $SynologyData['Disk 1']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk1Temperature"), $SynologyData['Disk 1']['diskTemperature']);
 		}
 		
 		if (array_key_exists('Disk 2', $SynologyData)) {
 			SetValue($this->GetIDforIdent("Disk2Model"), $SynologyData['Disk 2']['diskModel']);
 			SetValue($this->GetIDforIdent("Disk2Status"), $SynologyData['Disk 2']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk2TemperatureModel"), $SynologyData['Disk 2']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk2Temperature"), $SynologyData['Disk 2']['diskTemperature']);
 		}
 
 
