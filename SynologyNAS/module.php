@@ -49,7 +49,7 @@ class SynologyNAS extends IPSModule {
 	
 	//
 	private function getSnmpData($oid) {
-		return exec("c:\ip-symcon\snmpget.exe -c:home -t:2 -v:2c -q -r:192.168.251.51 -o:".$oid);
+		return exec("c:\ip-symcon\snmpget.exe -c:home -t:2 -v:2c -q -r:192.168.251.50 -o:".$oid);
 	}
 	// Aktualisierung der Variablen
 	public function Update() {
@@ -63,7 +63,7 @@ class SynologyNAS extends IPSModule {
 		$SynologyData['System']['version'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.5.3.0");
 		$SynologyData['System']['upgradeAvailable'] = $this->getSnmpData("1.3.6.1.4.1.6574.1.5.4.0");
 		
-		SetValue($this->GetIDforIdent("SystemStatus"), $SynologyData['System']['systemStatus']);
+		SetValue($this->GetIDforIdent("SystemSystemStatus"), $SynologyData['System']['systemStatus']);
 		SetValue($this->GetIDforIdent("SystemTemperature"), $SynologyData['System']['temperature']);
 		SetValue($this->GetIDforIdent("SystemPowerStatus"), $SynologyData['System']['powerStatus']);
 		SetValue($this->GetIDforIdent("SystemFanStatus"), $SynologyData['System']['systemFanStatus']);
