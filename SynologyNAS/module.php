@@ -39,8 +39,12 @@ class SynologyNAS extends IPSModule {
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemUpgradeAvailable", "System - Upgrade Available", "", 10), true);
 	
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Model", "Disk 1 - Model", "", 10), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Model", "Disk 1 - Status", "", 10), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Model", "Disk 1 - Temperatur", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Status", "Disk 1 - Status", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Temperature", "Disk 1 - Temperatur", "", 10), true);
+		
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Model", "Disk 2 - Model", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Status", "Disk 2 - Status", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Temperature", "Disk 2 - Temperatur", "", 10), true);
 		
 		$this->Update();
 		//Instanz ist aktiv
@@ -66,7 +70,7 @@ class SynologyNAS extends IPSModule {
 		SetValue($this->GetIDforIdent("SystemSystemStatus"), $SynologyData['System']['systemStatus']);
 		SetValue($this->GetIDforIdent("SystemTemperature"), $SynologyData['System']['temperature']);
 		SetValue($this->GetIDforIdent("SystemPowerStatus"), $SynologyData['System']['powerStatus']);
-		SetValue($this->GetIDforIdent("SystemFanStatus"), $SynologyData['System']['systemFanStatus']);
+		SetValue($this->GetIDforIdent("SystemSystemFanStatus"), $SynologyData['System']['systemFanStatus']);
 		SetValue($this->GetIDforIdent("SystemCPUFANStatus"), $SynologyData['System']['cpuFanStatus']);
 		SetValue($this->GetIDforIdent("SystemModelName"), $SynologyData['System']['modelName']);
 		SetValue($this->GetIDforIdent("SystemSerialNumber"), $SynologyData['System']['serialNumber']);
