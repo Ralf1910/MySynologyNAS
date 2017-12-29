@@ -42,8 +42,8 @@ class SynologyNAS extends IPSModule {
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPUUser", "CPU - User", "Integer.Prozent", 110), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPUSystem", "CPU - System", "Integer.Prozent", 120), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPUIdle", "CPU - Idle", "Integer.Prozent", 130), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPULoadOneMinute", "CPU - Load 1 Minute", "Integer.Prozent", 140), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPULoadFiveMinute", "CPU - Load 5 Minute", "Integer.Prozent", 150), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPULoadOneMinute", "CPU - Load (1 Minute)", "", 140), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPULoadFiveMinute", "CPU - Load (5 Minute)", "", 150), true);
 		
 		
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk1Model", "Disk 1 - Model", "", 1110), true);
