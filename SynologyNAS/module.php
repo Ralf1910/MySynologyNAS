@@ -38,21 +38,21 @@ class SynologyNAS extends IPSModule {
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("SystemVersion", "System - Version", "", 10), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemUpgradeAvailable", "System - Upgrade Available", "", 10), true);
 	
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Model", "Disk 1 - Model", "", 10), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Status", "Disk 1 - Status", "", 10), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Temperature", "Disk 1 - Temperatur", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk1Model", "Disk 1 - Model", "", 1110), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Status", "Disk 1 - Status", "", 1120), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Temperature", "Disk 1 - Temperatur", "", 1130), true);
 		
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Model", "Disk 2 - Model", "", 10), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Status", "Disk 2 - Status", "", 10), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Temperature", "Disk 2 - Temperatur", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk2Model", "Disk 2 - Model", "", 1210), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Status", "Disk 2 - Status", "", 1220), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Temperature", "Disk 2 - Temperatur", "", 1230), true);
 		
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk3Model", "Disk 3 - Model", "", 10), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk3Status", "Disk 3 - Status", "", 10), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk3Temperature", "Disk 3 - Temperatur", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk3Model", "Disk 3 - Model", "", 1310), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk3Status", "Disk 3 - Status", "", 1320), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk3Temperature", "Disk 3 - Temperatur", "", 1330), true);
 		
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk4Model", "Disk 4 - Model", "", 10), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk4Status", "Disk 4 - Status", "", 10), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk4Temperature", "Disk 4 - Temperatur", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk4Model", "Disk 4 - Model", "", 1410), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk4Status", "Disk 4 - Status", "", 1420), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk4Temperature", "Disk 4 - Temperatur", "", 1430), true);
 		
 		$this->Update();
 		//Instanz ist aktiv
