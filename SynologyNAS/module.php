@@ -175,15 +175,15 @@ class SynologyNAS extends IPSModule {
 		}
 		
 		if (array_key_exists('Disk 7', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk4Model"), $SynologyData['Disk 7']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk4Status"), $SynologyData['Disk 7']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk4Temperature"), $SynologyData['Disk 7']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk7Model"), $SynologyData['Disk 7']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk7Status"), $SynologyData['Disk 7']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk7Temperature"), $SynologyData['Disk 7']['diskTemperature']);
 		}
 		
 		if (array_key_exists('Disk 8', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk4Model"), $SynologyData['Disk 8']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk4Status"), $SynologyData['Disk 8']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk4Temperature"), $SynologyData['Disk 8']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk8Model"), $SynologyData['Disk 8']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk8Status"), $SynologyData['Disk 8']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk8Temperature"), $SynologyData['Disk 8']['diskTemperature']);
 		}
 
 
