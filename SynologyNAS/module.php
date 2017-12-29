@@ -15,13 +15,13 @@ class SynologyNAS extends IPSModule {
 		$this->RegisterPropertyString("IPAdresse", "192.168.251.50");
 		$this->RegisterPropertyInteger("Update", 1);
 		// Updates einstellen
-		$this->RegisterTimer("Update", $this->ReadPropertyInteger("Update")*5*60*1000, 'NAS_Update($_IPS[\'TARGET\']);');
+		$this->RegisterTimer("Update", $this->ReadPropertyInteger("Update")*60*1000, 'NAS_Update($_IPS[\'TARGET\']);');
 	}
 	// Überschreibt die intere IPS_ApplyChanges($id) Funktion
 	public function ApplyChanges() {
 		// Diese Zeile nicht löschen
 		parent::ApplyChanges();
-		$this->SetTimerInterval("Update", $this->ReadPropertyInteger("Update")*5*60*1000);
+		$this->SetTimerInterval("Update", $this->ReadPropertyInteger("Update")*60*1000);
 		
 		// Module anlegen
 		$archiv = IPS_GetInstanceIDByName("Archiv", 0 );
@@ -43,6 +43,8 @@ class SynologyNAS extends IPSModule {
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPUSystem", "CPU - System", "Integer.Prozent", 120), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPUIdle", "CPU - Idle", "Integer.Prozent", 130), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPULoadOneMinute", "CPU - Load (1 Minute)", "", 140), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPULoadFiveMinute", "CPU - Load (5 Minute)", "", 150), true);
+		
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("CPULoadFiveMinute", "CPU - Load (5 Minute)", "", 150), true);
 		
 		
