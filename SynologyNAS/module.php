@@ -76,8 +76,57 @@ class SynologyNAS extends IPSModule {
 		SetValue($this->GetIDforIdent("SystemSerialNumber"), $SynologyData['System']['serialNumber']);
 		SetValue($this->GetIDforIdent("SystemVersion"), $SynologyData['System']['version']);
 		SetValue($this->GetIDforIdent("SystemUpgradeAvailable"), $SynologyData['System']['upgradeAvailable']);
-		// $power = Sys_Ping($this->ReadPropertyString("IPAdresse"), 1000 );
-		// SetValue($this->GetIDForIdent("Power"), $power);
+	
+		// DiskIDs holen, da diese nicht 1:1 mit den AbfrageIDs übereinstimmen
+		$id0 = getSnmpData("1.3.6.1.4.1.6574.2.1.1.2.0");
+		$id1 = getSnmpData("1.3.6.1.4.1.6574.2.1.1.2.1");
+		$id2 = getSnmpData("1.3.6.1.4.1.6574.2.1.1.2.2");
+		$id3 = getSnmpData("1.3.6.1.4.1.6574.2.1.1.2.3");
+		$id4 = getSnmpData("1.3.6.1.4.1.6574.2.1.1.2.4");
+		$id5 = getSnmpData("1.3.6.1.4.1.6574.2.1.1.2.5");
+		$id6 = getSnmpData("1.3.6.1.4.1.6574.2.1.1.2.6");
+		$id7 = getSnmpData("1.3.6.1.4.1.6574.2.1.1.2.7");
+
+		$SynologyData[$id0]['diskModel'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.3.0");
+		$SynologyData[$id1]['diskModel'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.3.1");
+		$SynologyData[$id2]['diskModel'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.3.2");
+		$SynologyData[$id3]['diskModel'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.3.3");
+		$SynologyData[$id4]['diskModel'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.3.4");
+		$SynologyData[$id5]['diskModel'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.3.5");
+		$SynologyData[$id6]['diskModel'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.3.6");
+		$SynologyData[$id7]['diskModel'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.3.7");
+
+		$SynologyData[$id0]['diskStatus'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.5.0");
+		$SynologyData[$id1]['diskStatus'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.5.1");
+		$SynologyData[$id2]['diskStatus'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.5.2");
+		$SynologyData[$id3]['diskStatus'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.5.3");
+		$SynologyData[$id4]['diskStatus'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.5.4");
+		$SynologyData[$id5]['diskStatus'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.5.5");
+		$SynologyData[$id6]['diskStatus'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.5.6");
+		$SynologyData[$id7]['diskStatus'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.5.7");
+
+		$SynologyData[$id0]['diskTemperature'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.0");
+		$SynologyData[$id1]['diskTemperature'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.1");
+		$SynologyData[$id2]['diskTemperature'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.2");
+		$SynologyData[$id3]['diskTemperature'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.3");
+		$SynologyData[$id4]['diskTemperature'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.4");
+		$SynologyData[$id5]['diskTemperature'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.5");
+		$SynologyData[$id6]['diskTemperature'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.6");
+		$SynologyData[$id7]['diskTemperature'] = getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.7");
+
+		if (array_key_exists('Disk 1', $SynologyData)) {
+			SetValue($this->GetIDforIdent("Disk1Model"), $SynologyData['Disk 1']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk1Status"), $SynologyData['Disk 1']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk1TemperatureModel"), $SynologyData['Disk 1']['diskTemperature']);
+		}
+		
+		if (array_key_exists('Disk 2', $SynologyData)) {
+			SetValue($this->GetIDforIdent("Disk2Model"), $SynologyData['Disk 2']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk2Status"), $SynologyData['Disk 2']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk2TemperatureModel"), $SynologyData['Disk 2']['diskTemperature']);
+		}
+
+
 	}
 }
 
