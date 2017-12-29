@@ -40,20 +40,36 @@ class SynologyNAS extends IPSModule {
 	
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk1Model", "Disk 1 - Model", "", 1110), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Status", "Disk 1 - Status", "", 1120), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Temperature", "Disk 1 - Temperatur", "", 1130), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk1Temperature", "Disk 1 - Temperatur", "Temperatur", 1130), true);
 		
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk2Model", "Disk 2 - Model", "", 1210), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Status", "Disk 2 - Status", "", 1220), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Temperature", "Disk 2 - Temperatur", "", 1230), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk2Temperature", "Disk 2 - Temperatur", "Temperatur", 1230), true);
 		
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk3Model", "Disk 3 - Model", "", 1310), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk3Status", "Disk 3 - Status", "", 1320), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk3Temperature", "Disk 3 - Temperatur", "", 1330), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk3Temperature", "Disk 3 - Temperatur", "Temperatur", 1330), true);
 		
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk4Model", "Disk 4 - Model", "", 1410), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk4Status", "Disk 4 - Status", "", 1420), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk4Temperature", "Disk 4 - Temperatur", "", 1430), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk4Temperature", "Disk 4 - Temperatur", "Temperatur", 1430), true);
 		
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk5Model", "Disk 5 - Model", "", 1510), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk5Status", "Disk 5 - Status", "", 1520), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk5Temperature", "Disk 5 - Temperatur", "Temperatur", 1530), true);
+	
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk6Model", "Disk 6 - Model", "", 1610), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk6Status", "Disk 6 - Status", "", 1620), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk6Temperature", "Disk 6 - Temperatur", "Temperatur", 1630), true);
+	
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk7Model", "Disk 7 - Model", "", 1710), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk7Status", "Disk 7 - Status", "", 1720), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk7Temperature", "Disk 7 - Temperatur", "Temperatur", 1730), true);
+	
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("Disk8Model", "Disk 8 - Model", "", 1810), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk8Status", "Disk 8 - Status", "", 1820), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("Disk8Temperature", "Disk 8 - Temperatur", "Temperatur", 1830), true);
+	
 		$this->Update();
 		//Instanz ist aktiv
 		$this->SetStatus(102);
@@ -140,10 +156,10 @@ class SynologyNAS extends IPSModule {
 			SetValue($this->GetIDforIdent("Disk3Temperature"), $SynologyData['Disk 3']['diskTemperature']);
 		}
 		
-		if (array_key_exists('Disk 2', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk3Model"), $SynologyData['Disk 3']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk3Status"), $SynologyData['Disk 3']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk3Temperature"), $SynologyData['Disk 3']['diskTemperature']);
+		if (array_key_exists('Disk 4', $SynologyData)) {
+			SetValue($this->GetIDforIdent("Disk4Model"), $SynologyData['Disk 4']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk4Status"), $SynologyData['Disk 4']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk4Temperature"), $SynologyData['Disk 4']['diskTemperature']);
 		}
 
 
