@@ -24,6 +24,7 @@ class SynologyNAS extends IPSModule {
 		$this->SetTimerInterval("Update", $this->ReadPropertyInteger("Update")*5*60*1000);
 		
 		// Module anlegen
+		$archiv = IPS_GetInstanceIDByName("Archiv", 0 );
 		$self = $_IPS['SELF'];
 		$disk1ID = IPS_CreateInstance("{485D0419-BE97-4548-AA9C-C083EB82E61E}");
 		IPS_SetName($disk1ID, "Disk 1");
