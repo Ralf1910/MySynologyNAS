@@ -12,7 +12,7 @@ class SynologyNAS extends IPSModule {
 		parent::Create();
 		// IP Adresse
 		$archiv = IPS_GetInstanceIDByName("Archiv", 0 );
-		$this->RegisterPropertyString("IPAdresse", "192.168.251.50");
+		$this->RegisterPropertyString("IPAdresse", "192.168.251.200");
 		$this->RegisterPropertyInteger("Update", 1);
 		// Updates einstellen
 		$this->RegisterTimer("Update", $this->ReadPropertyInteger("Update")*60*1000, 'NAS_Update($_IPS[\'TARGET\']);');
