@@ -28,13 +28,13 @@ class SynologyNAS extends IPSModule {
 				
 		// Variablen anlegen / aktualisieren
 		// Systemvariablen
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemSystemStatus", "System - System Status", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("SystemSystemStatus", "System - System Status", "", 10), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemTemperature", "System - Temperatur", "Temperatur", 20), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemPowerStatus", "System - Power Status", "", 30), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemSystemFanStatus", "System - System Fan Status", "", 40), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemCPUFanStatus", "System - CPU Fan Status", "", 50), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("SystemModelName", "System - Model Name", "", 60), true);
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("SystemSerialNumber", "System - Serial Number", "", 70), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("SystemModelName", "System - Model Name", "", 60), false);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("SystemSerialNumber", "System - Serial Number", "", 70), false);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("SystemVersion", "System - Version", "", 80), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemUpgradeAvailable", "System - Upgrade Available", "", 90), true);
 	
