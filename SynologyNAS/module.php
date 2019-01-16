@@ -28,7 +28,7 @@ class SynologyNAS extends IPSModule {
 				
 		// Variablen anlegen / aktualisieren
 		// Systemvariablen
-		AC_SetLoggingStatus($archiv, $this->RegisterVariableString("SystemSystemStatus", "System - System Status", "", 10), true);
+		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemSystemStatus", "System - System Status", "", 10), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemTemperature", "System - Temperatur", "Temperatur", 20), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemPowerStatus", "System - Power Status", "", 30), true);
 		AC_SetLoggingStatus($archiv, $this->RegisterVariableInteger("SystemSystemFanStatus", "System - System Fan Status", "", 40), true);
