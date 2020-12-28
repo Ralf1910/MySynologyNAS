@@ -163,51 +163,51 @@ class SynologyNAS extends IPSModule {
 		$SynologyData[$id7]['diskTemperature'] = $this->getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.7");
 
 		if (array_key_exists('Drive 1', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk1Model"), $SynologyData['Disk 1']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk1Status"), $SynologyData['Disk 1']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk1Temperature"), $SynologyData['Disk 1']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk1Model"), $SynologyData['Drive 1']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk1Status"), $SynologyData['Drive 1']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk1Temperature"), $SynologyData['Drive 1']['diskTemperature']);
 		}
 		
 		if (array_key_exists('Drive 2', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk2Model"), $SynologyData['Disk 2']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk2Status"), $SynologyData['Disk 2']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk2Temperature"), $SynologyData['Disk 2']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk2Model"), $SynologyData['Drive 2']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk2Status"), $SynologyData['Drive 2']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk2Temperature"), $SynologyData['Drive 2']['diskTemperature']);
 		}
 		
 		if (array_key_exists('Drive 3', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk3Model"), $SynologyData['Disk 3']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk3Status"), $SynologyData['Disk 3']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk3Temperature"), $SynologyData['Disk 3']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk3Model"), $SynologyData['Drive 3']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk3Status"), $SynologyData['Drive 3']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk3Temperature"), $SynologyData['Drive 3']['diskTemperature']);
 		}
 		
 		if (array_key_exists('Drive 4', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk4Model"), $SynologyData['Disk 4']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk4Status"), $SynologyData['Disk 4']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk4Temperature"), $SynologyData['Disk 4']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk4Model"), $SynologyData['Drive 4']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk4Status"), $SynologyData['Drive 4']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk4Temperature"), $SynologyData['Drive 4']['diskTemperature']);
 		}
 		
 		if (array_key_exists('Drive 5', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk5Model"), $SynologyData['Disk 5']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk5Status"), $SynologyData['Disk 5']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk5Temperature"), $SynologyData['Disk 5']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk5Model"), $SynologyData['Drive 5']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk5Status"), $SynologyData['Drive 5']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk5Temperature"), $SynologyData['Drive 5']['diskTemperature']);
 		}
 		
 		if (array_key_exists('Drive 6', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk6Model"), $SynologyData['Disk 6']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk6Status"), $SynologyData['Disk 6']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk6Temperature"), $SynologyData['Disk 6']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk6Model"), $SynologyData['Drive 6']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk6Status"), $SynologyData['Drive 6']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk6Temperature"), $SynologyData['Drive 6']['diskTemperature']);
 		}
 		
 		if (array_key_exists('Drive 7', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk7Model"), $SynologyData['Disk 7']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk7Status"), $SynologyData['Disk 7']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk7Temperature"), $SynologyData['Disk 7']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk7Model"), $SynologyData['Drive 7']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk7Status"), $SynologyData['Drive 7']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk7Temperature"), $SynologyData['Drive 7']['diskTemperature']);
 		}
 		
 		if (array_key_exists('Drive 8', $SynologyData)) {
-			SetValue($this->GetIDforIdent("Disk8Model"), $SynologyData['Disk 8']['diskModel']);
-			SetValue($this->GetIDforIdent("Disk8Status"), $SynologyData['Disk 8']['diskStatus']);
-			SetValue($this->GetIDforIdent("Disk8Temperature"), $SynologyData['Disk 8']['diskTemperature']);
+			SetValue($this->GetIDforIdent("Disk8Model"), $SynologyData['Drive 8']['diskModel']);
+			SetValue($this->GetIDforIdent("Disk8Status"), $SynologyData['Drive 8']['diskStatus']);
+			SetValue($this->GetIDforIdent("Disk8Temperature"), $SynologyData['Drive 8']['diskTemperature']);
 		}
 
 
