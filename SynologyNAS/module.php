@@ -162,7 +162,7 @@ class SynologyNAS extends IPSModule {
 		$SynologyData[$id6]['diskTemperature'] = $this->getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.6");
 		$SynologyData[$id7]['diskTemperature'] = $this->getSnmpData("1.3.6.1.4.1.6574.2.1.1.6.7");
 
-		if (array_key_exists('Drive 1', $SynologyData)) {
+		if (array_key_exists($id0, $SynologyData)) {
 			SetValue($this->GetIDforIdent("Disk1Model"), $SynologyData['Drive 1']['diskModel']);
 			SetValue($this->GetIDforIdent("Disk1Status"), $SynologyData['Drive 1']['diskStatus']);
 			SetValue($this->GetIDforIdent("Disk1Temperature"), $SynologyData['Drive 1']['diskTemperature']);
