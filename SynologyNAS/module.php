@@ -120,7 +120,7 @@ class SynologyNAS extends IPSModule {
 		$SynologyData['CPU']['loadFiveMinute'] = $this->getSnmpData("1.3.6.1.4.1.2021.10.1.5.2");
 
 		SetValue($this->GetIDforIdent("CPUUser"), $SynologyData['CPU']['User']);
-		SetValue($this->GetIDforIdent("CPUSystem"), $SynologyData['CPU']['System']);
+		//SetValue($this->GetIDforIdent("CPUSystem"), $SynologyData['CPU']['System']);
 		SetValue($this->GetIDforIdent("CPUIdle"), $SynologyData['CPU']['Idle']);
 		SetValue($this->GetIDforIdent("CPULoadOneMinute"), $SynologyData['CPU']['loadOneMinute']);
 		SetValue($this->GetIDforIdent("CPULoadFiveMinute"), $SynologyData['CPU']['loadFiveMinute']);
